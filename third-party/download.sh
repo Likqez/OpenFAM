@@ -82,12 +82,12 @@ done
 
 CURRENT_DIR=`pwd`
 
-#GRPC v1.39.0
+#GRPC v1.45.3
 echo "Downloading GRPC source"
 git clone https://github.com/grpc/grpc.git
 cd grpc
 git fetch --all --tags --prune
-git checkout tags/v1.39.0 -b openfam
+git checkout tags/v1.45.3 -b openfam
 
 if [ "$no_libfabric" == "true" ]
 then
