@@ -38,6 +38,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <unistd.h>
+#include <sched.h>
 
 //#include "common/fam_test_config.h"
 
@@ -93,7 +94,7 @@ void *thr_check_fam_progress(void *arg) {
                 uint64_t progress = ctx[i]->fam_progress();
                 //#TODO: Compare fam_progress value with expected values
                 (void)progress;
-                pthread_yield();
+                sched_yield();
                 /* if (progress != 0) {
                   cout << "I/Os in Progress for context" << i << " is "
                          << progress << endl;
